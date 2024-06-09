@@ -12,6 +12,8 @@
 </div>
 <h3 align="center">[<a href="https://sites.google.com/view/2024rsp">project page</a>] [<a href="https://openreview.net/forum?id=rI6lxIX0uX">openreview</a>]</h3>
 
+<img width="100%" src="https://github.com/huiwon-jang/RSP/assets/69646951/7ee0066f-f1a5-4db1-84b5-8ccb3862475a"/>
+
 
 ### 1. Environment setup
 ```bash
@@ -71,4 +73,9 @@ python -m torch.distributed.launch --nproc_per_node=[N_NODE] main_pretrain_rsp.p
 ```
 
 ### 4. Evaluation
-- Checkpoints: TBD
+We provide the checkpoint in the below:
+- ViT-S/16: [[link]()]
+- ViT-B/16: [[link]()]
+
+#### Video Label Propagation
+We follow the [Dino](https://github.com/facebookresearch/dino) to evaluate RSP for video label propagation tasks
