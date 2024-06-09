@@ -78,8 +78,8 @@ python -m torch.distributed.launch --nproc_per_node=[N_NODE] main_pretrain_rsp.p
 
 ### 4. Evaluation
 We provide the checkpoint in the below:
-- ViT-S/16: [[link](https://drive.google.com/file/d/1OZW7UWOLhBxjXukn8CAuCSA9mCV_d9R2/view?usp=drive_link)]
-- ViT-B/16: [[link](https://drive.google.com/file/d/1GsA9h1w4RZ4unpJ2td1GaI_yfZ3vB2Rm/view?usp=sharing)]
+- ViT-S/16 400 epochs: [[link](https://drive.google.com/file/d/1OZW7UWOLhBxjXukn8CAuCSA9mCV_d9R2/view?usp=drive_link)]
+- ViT-B/16 400 epochs: [[link](https://drive.google.com/file/d/1GsA9h1w4RZ4unpJ2td1GaI_yfZ3vB2Rm/view?usp=sharing)]
 
 #### Video Label Propagation
 1. DAVIS 2017 video object segmentation
