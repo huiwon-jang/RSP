@@ -103,7 +103,6 @@ def main(args):
 
     dataset_train = PairedKinetics(
         args.data_path,
-        ratio=args.ratio,
         max_distance=args.max_distance,
         repeated_sampling=args.repeated_sampling
     )

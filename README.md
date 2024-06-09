@@ -16,8 +16,12 @@
 
 
 ### 1. Environment setup
+- We note that torch version >2.0 may work, but `conda install` with below version is recommended.
 ```bash
-xx (TBD)
+conda create -n rsp python=3.9.12 -y
+conda activate rsp
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+pip install -r requirements.txt
 ```
 
 ### 2. Dataset
@@ -78,4 +82,18 @@ We provide the checkpoint in the below:
 - ViT-B/16: [[link](https://drive.google.com/file/d/1GsA9h1w4RZ4unpJ2td1GaI_yfZ3vB2Rm/view?usp=sharing)]
 
 #### Video Label Propagation
-We follow the [Dino](https://github.com/facebookresearch/dino) to evaluate RSP for video label propagation tasks
+1. DAVIS 2017 video object segmentation
+We follow the [Dino](https://github.com/facebookresearch/dino) to evaluate RSP on DAVIS 2017 benchmark.
+TBD
+2. JHMDB pose tracking
+TBD
+3. VIP video part segmentation
+TBD
+
+#### Vision-based Robot Learning
+1. CortexBench
+TBD
+2. RLBench
+TBD
+3. Franka Kitchen
+TBD

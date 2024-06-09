@@ -55,14 +55,13 @@ class PairedKinetics(Dataset):
     def __init__(
         self,
         root,
-        ratio=1.0,
         max_distance=48,
         repeated_sampling=2
     ):
         super().__init__()
         self.root = root
         with open(
-            os.path.join(self.root, "labels", f"label_{ratio}.pickle"), "rb"
+            os.path.join(self.root, "labels", f"label_1.0.pickle"), "rb"
         ) as f:
             self.samples = pickle.load(f)
 
