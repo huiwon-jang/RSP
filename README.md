@@ -30,10 +30,27 @@ sh data_preprocessing/extract.sh
 
 #### Dataset pre-processing
 - We resize the data into 256x256 for the efficient loading while training.
-- We additionally provide the code to filter out several not-working videos.
 ```bash
 python data_preprocessing/make_256scale.py --datadir $DATA_ROOT
+```
+- We additionally provide the code to filter out several not-working videos.
+```bash
 python data_preprocessing/make_labels.py --datadir $DATA_ROOT --filedir train2
+```
+
+#### Kinetics-400
+```
+/data/kinetics400
+|-- train2
+    |-- abseiling
+        |-- xx.mp4
+        |-- ...
+    |-- air_drumming
+        |-- xx.mp4
+        |-- ...
+    |-- ...
+|-- labels
+    |-- label_full_1.0.pickle
 ```
 
 ### 3. Pre-training RSP on Kinetics-400

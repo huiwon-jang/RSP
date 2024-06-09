@@ -1,5 +1,3 @@
-## v1 -> v2: bug for positional embedding is fixed
-
 from functools import partial
 
 import torch

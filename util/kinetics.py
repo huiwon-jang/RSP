@@ -1,13 +1,3 @@
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-# All rights reserved.
-
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-# --------------------------------------------------------
-# References:
-# DeiT: https://github.com/facebookresearch/deit
-# --------------------------------------------------------
-
 import os
 import random
 import pickle
@@ -15,9 +5,10 @@ import pickle
 from decord import VideoReader, cpu
 
 import torch
+from torch.utils.data import Dataset
 from torchvision import transforms
 import torchvision.transforms.functional as F
-from torch.utils.data import Dataset
+
 
 
 class PairedRandomResizedCrop:

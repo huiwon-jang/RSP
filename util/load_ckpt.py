@@ -4,6 +4,7 @@ import torch
 
 from util.pos_embed import interpolate_pos_embed
 
+
 def load_pretrained_weights(model, pretrained_weights, checkpoint_key):
     print(checkpoint_key)
     state_dict = torch.load(pretrained_weights, map_location="cpu")

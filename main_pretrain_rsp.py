@@ -1,13 +1,3 @@
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-# All rights reserved.
-
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-# --------------------------------------------------------
-# References:
-# DeiT: https://github.com/facebookresearch/deit
-# BEiT: https://github.com/microsoft/unilm/tree/master/beit
-# --------------------------------------------------------
 import os
 import time
 import json
@@ -49,7 +39,6 @@ def get_args_parser():
     parser.add_argument("--start_epoch", default=0, type=int)
     parser.add_argument("--output_dir", default="./output_dir")
     parser.add_argument("--log_dir", default="./output_dir")
-
 
     # Model parameters
     parser.add_argument("--model", default="rsp_vit_small_patch16", type=str,
