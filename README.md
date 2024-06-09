@@ -54,7 +54,21 @@ python data_preprocessing/make_labels.py --datadir $DATA_ROOT --filedir train2
 ```
 
 ### 3. Pre-training RSP on Kinetics-400
-
+- Note that `[N_NODE] x [BATCH_SIZE_PER_GPU] x [ACCUM_ITER] = 1536` to reproduce our results.
+- Default: `[DATA_PATH]=/data/kinetics400 `
+```
+python -m torch.distributed.launch --nproc_per_node=[N_NODE] main_pretrain_rsp.py \
+    --batch_size [BATCH_SIZE_PER_GPU] \
+    --accum_iter [ACCUM_ITER] \
+    --model rsp_vit_small_patch16 \
+    --epochs 400 \
+    --warmup_epochs 40 \
+    --data_path [DATA_PATH] \
+    --log_dir [LOG_DIR] \
+    --output_dir [LOG_DIR] \
+    --norm_pix_loss \
+    --repeated_sampling 2
+```
 
 ### 4. Evaluation
 - Checkpoints: TBD

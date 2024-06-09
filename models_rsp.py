@@ -89,12 +89,12 @@ class RSP(nn.Module):
         decoder_num_heads=16,
         mlp_ratio=4.0,
         norm_layer=nn.LayerNorm,
-        norm_pix_loss=False,
-        kl_scale=0.1,
-        kl_balance=0.5,
-        kl_freebit=0.0,
+        norm_pix_loss=True,
+        kl_scale=0.01,
+        kl_balance=0.2,
+        kl_freebit=0.1,
         mask_ratio=0.75,
-        noise_scale=0.1,
+        noise_scale=0.5,
     ):
         super().__init__()
         self.patch_embed = PatchEmbed(img_size, patch_size, in_chans, embed_dim)

@@ -50,7 +50,7 @@ def get_args_parser():
     parser.set_defaults(norm_pix_loss=False)
 
     parser.add_argument("--mask_ratio", default=0.75, type=float)
-    parser.add_argument("--noise-scale", type=float, default=0.1)
+    parser.add_argument("--noise-scale", type=float, default=0.5)
     parser.add_argument("--kl-scale", type=float, default=0.01)
     parser.add_argument("--kl-balance", type=float, default=0.2)
     parser.add_argument("--kl-freebit", type=float, default=0.1)
@@ -65,13 +65,12 @@ def get_args_parser():
     parser.add_argument("--blr", type=float, default=1.5e-4,
                         metavar="LR", help="base learning rate: absolute_lr = base_lr * total_batch_size / 256")
     parser.add_argument("--min_lr", type=float, default=0.0)
-    parser.add_argument("--warmup_epochs", type=int, default=20)
+    parser.add_argument("--warmup_epochs", type=int, default=40)
 
     # Dataset parameters
     parser.add_argument("--data_path", default="/data/kinetics400", type=str)
     parser.add_argument("--max_distance", default=48, type=int)
     parser.add_argument("--repeated_sampling", type=int, default=2)
-    parser.add_argument("--ratio", type=str, default='1.0')
     parser.add_argument("--num_workers", default=6, type=int)
     parser.add_argument("--pin_mem", action="store_true")
     parser.add_argument("--no_pin_mem", action="store_false", dest="pin_mem")
@@ -184,6 +183,9 @@ def main(args):
         optimizer=optimizer,
         loss_scaler=loss_scaler,
     )
+
+    args.epochs = args.epochs // args.repeated_sampling
+    args.warmup_epochs = args.warmup_epochs // args.repeated_sampling
 
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()
