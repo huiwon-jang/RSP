@@ -82,18 +82,59 @@ We provide the checkpoint in the below:
 - ViT-B/16 400 epochs: [[link](https://drive.google.com/file/d/1GsA9h1w4RZ4unpJ2td1GaI_yfZ3vB2Rm/view?usp=sharing)]
 
 #### Video Label Propagation
+The evaluation code is mainly built upon[Dino](https://github.com/facebookresearch/dino).
 1. DAVIS 2017 video object segmentation
-We follow the [Dino](https://github.com/facebookresearch/dino) to evaluate RSP on DAVIS 2017 benchmark.
-TBD
+- Step 1: Dataset preparation
+```bash
+sh data_preprocessing/eval/davis_download.sh
+python data_preprocessing/eval/davis_preprocessing.py --data_root [DATA_ROOT]
+```
+    - Default: `[DATA_ROOT]=/data`
+    - We resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
+```
+[DATA_ROOT]/DAVIS_480_880
+|-- Annotations/480p
+    |-- bear
+        |-- 00000.png
+        |-- ...
+    |-- ...
+|-- ImageSets/2017/val.txt
+|-- JPEGImages/480p
+    |-- bear
+        |-- 00000.jpg
+        |-- ...
+    |-- ...
+```
+- Step 2: Video object segmentation
+```bash
+python eval_video_segmentation_davis.py \
+    --finetune [LOG_DIR]/checkpoint-199.pth \
+    --output_dir [LOG_DIR]/davis_seg \
+    --data_path [DATA_ROOT]/DAVIS_480_880 \
+    --topk 7 --size_mask_neighborhood 30 --n_last_frames 30 \
+    --model vit_small
+```
+- Step 3: Evaluation the obtained segmentation
+```bash
+git clone https://github.com/davisvideochallenge/davis2017-evaluation
+python ./davis2017-evaluation/evaluation_method.py \
+    --task semi-supervised \
+    --results_path [LOG_DIR]/davis_seg \
+    --davis_path [DATA_ROOT]/DAVIS_480_880
+```
+
 2. JHMDB pose tracking
 TBD
+
 3. VIP video part segmentation
 TBD
 
 #### Vision-based Robot Learning
 1. CortexBench
 TBD
+
 2. RLBench
 TBD
+
 3. Franka Kitchen
 TBD
