@@ -83,15 +83,14 @@ We provide the checkpoint in the below:
 
 #### Video Label Propagation
 The evaluation code is mainly built upon [Dino](https://github.com/facebookresearch/dino).
-1. **DAVIS 2017 video object segmentation**
+**1. DAVIS 2017 video object segmentation**
 - **Step 1: Dataset preparation**
 
-We note that the default root path is `[DATA_ROOT]=/data`.
+We note that the default root path is `[DATA_ROOT]=/data`. Addotionally, we resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
 ```bash
 sh data_preprocessing/eval/davis_download.sh
 python data_preprocessing/eval/davis_preprocessing.py --data_root [DATA_ROOT]
 ```
-We resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
 ```
 [DATA_ROOT]/DAVIS_480_880
 |-- Annotations/480p
@@ -126,10 +125,10 @@ python ./davis2017-evaluation/evaluation_method.py \
     --davis_path [DATA_ROOT]/DAVIS_480_880
 ```
 
-2. **JHMDB pose tracking**
+**2. JHMDB pose tracking**
 TBD
 
-3. **VIP video part segmentation**
+**3. VIP video part segmentation**
 TBD
 
 #### Vision-based Robot Learning
