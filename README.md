@@ -45,7 +45,7 @@ python data_preprocessing/make_labels.py --datadir $DATA_ROOT --filedir train2
 ```
 
 #### Kinetics-400
-```bash
+```
 /data/kinetics400
 |-- train2
     |-- abseiling
@@ -89,9 +89,11 @@ The evaluation code is mainly built upon[Dino](https://github.com/facebookresear
 sh data_preprocessing/eval/davis_download.sh
 python data_preprocessing/eval/davis_preprocessing.py --data_root [DATA_ROOT]
 ```
+
     - Default: `[DATA_ROOT]=/data`
     - We resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
-```bash
+
+```
 [DATA_ROOT]/DAVIS_480_880
 |-- Annotations/480p
     |-- bear
