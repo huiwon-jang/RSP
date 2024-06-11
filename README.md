@@ -82,7 +82,7 @@ We provide the checkpoint in the below:
 - ViT-B/16 400 epochs: [[link](https://drive.google.com/file/d/1GsA9h1w4RZ4unpJ2td1GaI_yfZ3vB2Rm/view?usp=sharing)]
 
 #### Video Label Propagation
-The evaluation code is mainly built upon[Dino](https://github.com/facebookresearch/dino).
+The evaluation code is mainly built upon [Dino](https://github.com/facebookresearch/dino).
 1. **DAVIS 2017 video object segmentation**
 - **Step 1: Dataset preparation**
 
