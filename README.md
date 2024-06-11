@@ -85,6 +85,7 @@ We provide the checkpoint in the below:
 The evaluation code is mainly built upon[Dino](https://github.com/facebookresearch/dino).
 1. DAVIS 2017 video object segmentation
 - Step 1: Dataset preparation
+
 We note that the default root path is `[DATA_ROOT]=/data`.
 ```bash
 sh data_preprocessing/eval/davis_download.sh
@@ -105,6 +106,7 @@ We resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
         |-- ...
     |-- ...
 ```
+
 - Step 2: Video object segmentation
 ```bash
 python eval_video_segmentation_davis.py \
@@ -114,6 +116,7 @@ python eval_video_segmentation_davis.py \
     --topk 7 --size_mask_neighborhood 30 --n_last_frames 30 \
     --model vit_small
 ```
+
 - Step 3: Evaluation the obtained segmentation
 ```bash
 git clone https://github.com/davisvideochallenge/davis2017-evaluation
