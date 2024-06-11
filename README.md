@@ -45,7 +45,7 @@ python data_preprocessing/make_labels.py --datadir $DATA_ROOT --filedir train2
 ```
 
 #### Kinetics-400
-```
+```bash
 /data/kinetics400
 |-- train2
     |-- abseiling
@@ -62,7 +62,7 @@ python data_preprocessing/make_labels.py --datadir $DATA_ROOT --filedir train2
 ### 3. Pre-training RSP on Kinetics-400
 - Note that `[N_NODE] x [BATCH_SIZE_PER_GPU] x [ACCUM_ITER] = 1536` to reproduce our results.
 - Default: `[DATA_PATH]=/data/kinetics400 `
-```
+```bash
 python -m torch.distributed.launch --nproc_per_node=[N_NODE] main_pretrain_rsp.py \
     --batch_size [BATCH_SIZE_PER_GPU] \
     --accum_iter [ACCUM_ITER] \
@@ -91,7 +91,7 @@ python data_preprocessing/eval/davis_preprocessing.py --data_root [DATA_ROOT]
 ```
     - Default: `[DATA_ROOT]=/data`
     - We resize DAVIS of 480x(?) to 480x880 for a natural evaluation with patches.
-```
+```bash
 [DATA_ROOT]/DAVIS_480_880
 |-- Annotations/480p
     |-- bear
