@@ -14,4 +14,4 @@
 
 <img width="100%" src="https://github.com/huiwon-jang/RSP/assets/69646951/7ee0066f-f1a5-4db1-84b5-8ccb3862475a"/>
 
-# Evaluation for CortexBench
+# Evaluation RSP on CortexBench
