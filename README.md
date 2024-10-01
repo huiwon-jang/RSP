@@ -134,7 +134,7 @@ TBD
 
 ### 4.2. Vision-based Robot Learning
 #### 1. CortexBench
-TBD
+We will update the evaluation code at https://github.com/huiwon-jang/RSP/tree/eval_cortexbench.
 
 #### 2. RLBench
 TBD
