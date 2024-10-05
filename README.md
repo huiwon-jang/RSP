@@ -14,6 +14,45 @@
 
 <img width="100%" src="https://github.com/huiwon-jang/RSP/assets/69646951/7ee0066f-f1a5-4db1-84b5-8ccb3862475a"/>
 
-# Evaluation RSP on CortexBench
+# Evaluation RSP on Robot Learning tasks
 
+### 1. CortexBench
 The evaluation code is mainly built upon [eai-vc](https://github.com/facebookresearch/eai-vc).
+
+#### 1.1. Dataset preparation
+Please see the eai-vc-custom/coretexbench/DATASETS.md to install the dataset in the correct directory as follows.
+
+- Adroit
+```
+
+```
+- Metaworld
+
+- DMControl
+
+- Trifinger
+```
+eai-vc-custom/cortexbench/trifinger_vc/assets/bc_demos/data/trifinger-demos
+|-- move
+    |-- demo-0000
+        |-- dts-0p02
+            |-- downsample.pth
+            |-- rgb_image_60.gif
+        |-- dts-0p4
+            |-- downsample.pth
+            |-- rgb_image_60.gif
+        |-- demo-0000.npz
+    |-- ...
+|-- reach
+    |-- demo-0000
+        |-- dts-0p02
+            |-- downsample.pth
+            |-- rgb_image_60.gif
+        |-- dts-0p4
+            |-- downsample.pth
+            |-- rgb_image_60.gif
+        |-- demo-0000.npz
+    |-- ...
+```
+
+#### 1.2. Model configuration
