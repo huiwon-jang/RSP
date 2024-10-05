@@ -1,0 +1,17 @@
+_target_: vc_models.models.load_model
+model:
+        _target_: vc_models.models.vit.vit.load_mae_encoder
+        checkpoint_path: [LOG_DIR]/checkpoint-199.pth
+        model:
+                _target_: vc_models.models.vit.vit.vit_small_patch16
+                img_size: 224
+                use_cls: True
+                drop_path_rate: 0.0
+transform:
+        _target_: vc_models.transforms.vit_transforms
+metadata:
+        algo: ours
+        model: vit_small_patch16
+        data:
+                - kinetics400
+        comment: 400_epochs
