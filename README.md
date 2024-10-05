@@ -20,7 +20,7 @@
 The evaluation code is mainly built upon [eai-vc](https://github.com/facebookresearch/eai-vc).
 
 #### 1.1. Dataset preparation
-Please see the eai-vc-custom/coretexbench/DATASETS.md to install the dataset in the correct directory as follows.
+Please see the `eai-vc-custom/coretexbench/DATASETS.md` to install the dataset in the correct directory as follows.
 
 - Adroit
 ```
@@ -56,3 +56,5 @@ eai-vc-custom/cortexbench/trifinger_vc/assets/bc_demos/data/trifinger-demos
 ```
 
 #### 1.2. Model configuration
+- The model configuration is handled in `eai-vc-custom/vc_models/src/vc_models/conf/model/rsp_vits16.yaml`.
+- You need to replace `[LOG_DIR]` in `model/checkpoint_path` properly to evaluate our model.
