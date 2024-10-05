@@ -18,7 +18,7 @@ VC1_LARGE_NAME = "vc1_vitl"
 _EAI_VC1_BASE_URL = "https://dl.fbaipublicfiles.com/eai-vc/"
 
 
-# progress_bar and download_url from 
+# progress_bar and download_url from
 # https://github.com/facebookresearch/Detectron/blob/1809dd41c1ffc881c0d6b1c16ea38d08894f8b6d/detectron/utils/io.py
 def _progress_bar(count, total):
     """Report download progress.
@@ -94,9 +94,9 @@ def load_model(model_name):
         metadata (dict): the metadata of the model
     """
     models_filepath = os.path.dirname(os.path.abspath(vc_models.__file__))
-    
+
     cfg_path = os.path.join(models_filepath,"conf", "model", f"{model_name}.yaml")
-    
+
     model_cfg = omegaconf.OmegaConf.load(cfg_path)
     # returns tuple of model, embedding_dim, transform, metadata
     return hydra.utils.call(model_cfg)

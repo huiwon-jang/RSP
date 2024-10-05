@@ -10,8 +10,8 @@ model:
 transform:
         _target_: vc_models.transforms.vit_transforms
 metadata:
-        algo: ours
+        algo: rsp
         model: vit_small_patch16
         data:
                 - kinetics400
-        comment: 400_epochs
+        comment: 400/400_epochs

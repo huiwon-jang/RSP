@@ -24,12 +24,28 @@ Please see the `eai-vc-custom/coretexbench/DATASETS.md` to install the dataset i
 
 - Adroit
 ```
-
+eai-vc-custom/cortexbench/mujoco_vc/visual_imitation/data/datasets/adroit-expert-v1.0
+|-- pen-v0.pickle
+|-- relocate-v0.pickle
 ```
 - Metaworld
-
+```
+eai-vc-custom/cortexbench/mujoco_vc/visual_imitation/data/datasets/metaworld-expert-v1.0
+|-- assembly-v2-goal-observable.pickle
+|-- bin-picking-v2-goal-observable.pickle
+|-- button-press-topdown-v2-goal-observable.pickle
+|-- drawer-open-v2-goal-observable.pickle
+|-- hammer-v2-goal-observable.pickle
+```
 - DMControl
-
+```
+eai-vc-custom/cortexbench/mujoco_vc/visual_imitation/data/datasets/dmc-expert-v1.0
+|-- dmc_cheetah_run-v1.pickle
+|-- dmc_finger_spin-v1.pickle
+|-- dmc_reacher_easy-v1.pickle
+|-- dmc_walker_stand-v1.pickle
+|-- dmc_walker_walk-v1.pickle
+```
 - Trifinger
 ```
 eai-vc-custom/cortexbench/trifinger_vc/assets/bc_demos/data/trifinger-demos
@@ -56,5 +72,9 @@ eai-vc-custom/cortexbench/trifinger_vc/assets/bc_demos/data/trifinger-demos
 ```
 
 #### 1.2. Model configuration
-- The model configuration is handled in `eai-vc-custom/vc_models/src/vc_models/conf/model/rsp_vits16.yaml`.
+- The model configuration is handled in `eai-vc-custom/vc_models/conf/model/rsp_vits16.yaml`.
 - You need to replace `[LOG_DIR]` in `model/checkpoint_path` properly to evaluate our model.
+
+
+#### 1.3. Evaluation script
+TBD
