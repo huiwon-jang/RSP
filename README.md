@@ -126,18 +126,12 @@ python ./davis2017-evaluation/evaluation_method.py \
     --davis_path [DATA_ROOT]/DAVIS_480_880
 ```
 
-#### 2. JHMDB pose tracking
-TBD
-
-#### 3. VIP video part segmentation
-TBD
-
 ### 4.2. Vision-based Robot Learning
 #### 1. CortexBench
-We will update the evaluation code at https://github.com/huiwon-jang/RSP/tree/eval_cortexbench.
+We provide the evaluation code at https://github.com/huiwon-jang/RSP/tree/eval_cortexbench.
 
-#### 2. RLBench
-TBD
+### TOODs
+* [  ] Evaluation codes: JHMDB, VIP, RLBench, Franka Kitchen
 
-#### 3. Franka Kitchen
-TBD
+### Note
+It's possible that this code may not accurately replicate the results outlined in the paper due to potential human errors during the preparation and cleaning of the code for release. If you encounter any difficulties in reproducing our findings, please don't hesitate to inform us. Additionally, we'll make an effort to carry out sanity-check experiments in the near future.
